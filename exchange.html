@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foreign Exchange</title>
+    <script>
+        var f,a,val=0,res=0;
+        function convert(f,a)
+        {
+            val=parseFloat(f.rupees.value);
+            if(a.match("US")){
+                res=val/47.03;
+                alert("Currency in US Dollars "+res);
+            }
+            if(a.match("UK")){
+                res=val/66.74;
+                alert("Currency in UK Pounds "+res);
+            }
+            if(a.match("SG")){
+                res=val/24.97;
+                alert("Currency in Singapore Dollars "+res);
+            }
+            if(a.match("UAE")){
+                res=val/10.74;
+                alert("Currency in UAE Dhirams Dollars "+res);
+            }
+        }
+    </script>
+</head>
+<body>
+    <form name="forexform">
+        <pre>
+            Enter the value in Rupees.
+            <input type="text" name="rupees">
+            USDollar <input type="radio" name="currency" onclick="convert(this.form,'US')"> 
+            UKPound  <input type="radio" name="currency" onclick="convert(this.form,'UK')"> 
+            Singapore Dollar  <input type="radio" name="currency" onclick="convert(this.form,'SG')"> 
+            UAE Dhirams  <input type="radio" name="currency" onclick="convert(this.form,'UAE')"> 
+        </pre>
+    </form>
+</body>
+</html>
